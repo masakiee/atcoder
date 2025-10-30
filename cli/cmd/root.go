@@ -13,6 +13,11 @@ var rootCmd = &cobra.Command{
 	Long:  "Utility CLI that provides various helpers.",
 }
 
+func init() {
+	rootCmd.AddCommand(runCmd)
+	rootCmd.AddCommand(setupCmd)
+}
+
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)

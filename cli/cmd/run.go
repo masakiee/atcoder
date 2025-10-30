@@ -48,9 +48,3 @@ func splitByBlankLines(s string) []string {
 	parts := re.Split(s, -1)
 	return parts
 }
-
-func init() {
-	rootCmd.AddCommand(runCmd)
-}
-
-
