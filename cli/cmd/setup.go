@@ -32,7 +32,9 @@ var setupCmd = &cobra.Command{
 		// このgoファイルからの相対パスで指定
 		os.Mkdir(fmt.Sprintf("%s/", num), 0755)
 		os.Mkdir(fmt.Sprintf("%s/%s/", num, question), 0755)
-		os.WriteFile(fmt.Sprintf("%s/%s/main.go", num, question), template, 0644)
+		file := "%s/%s/main.go"
+		os.WriteFile(fmt.Sprintf(file, num, question), template, 0644)
+		fmt.Printf("[Template generated] -> %s", file)
 		return nil
 	},
 }
