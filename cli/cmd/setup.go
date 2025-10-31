@@ -34,7 +34,7 @@ var setupCmd = &cobra.Command{
 		os.Mkdir(fmt.Sprintf("%s/%s/", num, question), 0755)
 		file := fmt.Sprintf("%s/%s/main.go", num, question)
 		os.WriteFile(file, template, 0644)
-		fmt.Printf("[Template generated] -> %s\n", file)
+		fmt.Println(file)
 		return nil
 	},
 }
