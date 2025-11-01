@@ -15,3 +15,21 @@ func main() {
 	var ans int
 	fmt.Println(ans)
 }
+
+func sumInts(arr ...int) int {
+	ret := 0
+	for _, v := range arr {
+		ret += v
+	}
+	return ret
+}
+
+func minInts(arr ...int) int {
+	min := arr[0]
+	for _, v := range arr[1:] {
+		if min > v {
+			min = v
+		}
+	}
+	return min
+}
