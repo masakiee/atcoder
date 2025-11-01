@@ -13,11 +13,13 @@ var snippetGo []byte
 
 var setupCmd = &cobra.Command{
 	Use:   "setup",
+	Aliases: []string{"s"},
 	Short: "Setup the environment for the atcoder",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		num := args[0]
 		question := args[1]
-		lang := args[2]
+		// lang := args[2]
+		lang := "go"
 		if num == "" {
 			return fmt.Errorf("num is required")
 		}
