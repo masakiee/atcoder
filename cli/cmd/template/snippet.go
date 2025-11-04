@@ -33,3 +33,13 @@ func minInts(arr ...int) int {
 	}
 	return min
 }
+
+func filter[T any](arr []T, f func(T) bool) []T {
+	filtered := []T{}
+	for _, v := range arr {
+		if f(v) {
+			filtered = append(filtered, v)
+		}
+	}
+	return filtered
+}
