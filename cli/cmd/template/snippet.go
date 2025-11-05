@@ -34,6 +34,14 @@ func minInts(arr ...int) int {
 	return min
 }
 
+func absInt(v int) int {
+	if v > 0 {
+		return v
+	} else {
+		return -v
+	}
+}
+
 func filter[T any](arr []T, f func(T) bool) []T {
 	filtered := []T{}
 	for _, v := range arr {
