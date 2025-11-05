@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 type Gem struct {
@@ -22,32 +23,24 @@ func main() {
 		fmt.Scanf("%d", &C[i])
 	}
 
-	cp := make([]int, N)
-	for i := range V {
-		cp[i] = V[i] - C[i]
-	}
-
-	cp = filter(cp, func (v int) bool {
-		return v > 0
-	})
-	
-	fmt.Println(sum(cp))
-}
-
-func sum(arr []int) int {
-	var ret int
-	for _, v := range arr {
-		ret += v
-	}
-	return ret
-}
-
-func filter[T any](arr []T, f func(T) bool) []T {
-	filtered := []T{}
-	for _, v := range arr {
-		if f(v) {
-			filtered = append(filtered, v)
+	var ans int = math.MinInt
+	for mask := 0; mask < (1 << N); mask++ {
+		var cp int
+		for i := 0; i < N; i++ {
+			if mask & (1<<i) != 0 {
+				cp += V[i] - C[i]
+			}
 		}
+		ans = max(ans, cp)
 	}
-	return filtered
+
+	fmt.Println(ans)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
 }
