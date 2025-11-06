@@ -24,6 +24,16 @@ func sumInts(arr ...int) int {
 	return ret
 }
 
+func maxInts(arr ...int) int {
+	max := arr[0]
+	for _, v := range arr[1:] {
+		if max < v {
+			max = v
+		}
+	}
+	return max
+}
+
 func minInts(arr ...int) int {
 	min := arr[0]
 	for _, v := range arr[1:] {
