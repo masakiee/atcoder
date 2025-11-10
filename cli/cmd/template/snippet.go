@@ -61,3 +61,11 @@ func filter[T any](arr []T, f func(T) bool) []T {
 	}
 	return filtered
 }
+
+func numPer(n int) int {
+	ans := 1
+	for i:=n; i>0; i-- {
+		ans *= n
+	}
+	return ans
+}
