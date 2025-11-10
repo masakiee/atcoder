@@ -52,6 +52,37 @@ func absInt(v int) int {
 	}
 }
 
+func lowerBound(a []int, v int) int {
+	low, high := -1, len(a)
+	for high - low > 1 {
+		mid := (high - low) / 2
+		if a[mid] >= v {
+			high = mid
+		} else {
+			low = mid
+		}
+	}
+
+	return high
+}
+
+func upperBound(a []int, v int) int {
+	low, high := -1, len(a)
+	for high - low > 1 {
+		mid := (high + low) / 2
+		if a[mid] > v {
+			high = mid
+		} else {
+			low = mid
+		}
+	}
+	return high
+}
+
+func ceil(a, b int) int {
+	return (a + b - 1) / b
+}
+
 func filter[T any](arr []T, f func(T) bool) []T {
 	filtered := []T{}
 	for _, v := range arr {
