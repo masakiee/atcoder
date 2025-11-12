@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var N int
+	var S string
+	fmt.Scan(&N)
+	fmt.Scan(&S)
+	
+	var ans int
+	for i:=0; i<=N-3; i++ {
+		if S[i:i+3] == "ABC" {
+			ans++
+		}
+	}
+	fmt.Println(ans)
+}
