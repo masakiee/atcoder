@@ -8,7 +8,7 @@ func main() {
 	var N int
 	fmt.Scan(&N)
 	A := make([]int, N)
-	for i := 0; i < N; i++ {
+	for i := range A {
 		fmt.Scanf("%d", &A[i])
 	}
 	
