@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -50,6 +51,10 @@ func absInt(v int) int {
 	} else {
 		return -v
 	}
+}
+
+func powInt(x, y int) int {
+	return int(math.Pow(float64(x), float64(y)))
 }
 
 func lowerBound(a []int, v int) int {
